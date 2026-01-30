@@ -6,14 +6,14 @@
 
 <title>Adalberto & Araneth | Invitación de Boda</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- FUENTES -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --azul-rey:#0f2a44;
   --marfil:#f7f4ef;
-  --acento:#b7c9c2;
+  --dorado:#c9a44c;
 }
 
 *{
@@ -30,230 +30,84 @@ body{
 
 section{
   min-height:100vh;
-  padding:40px 20px;
+  padding:50px 20px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-  animation:fade 1.5s ease;
 }
 
-@keyframes fade{
-  from{opacity:0; transform:translateY(20px);}
+/* ANIMACIONES */
+.fade-up{
+  animation:fadeUp 1.4s ease forwards;
+}
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(25px);}
   to{opacity:1; transform:translateY(0);}
 }
 
-/* ---------- PORTADA ---------- */
+/* ================= PORTADA ================= */
 .portada{
-  background:var(--azul-rey);
+  background:
+    linear-gradient(rgba(15,42,68,.75), rgba(15,42,68,.75)),
+    url('foto-pareja.jpg') center/cover no-repeat;
   color:white;
 }
 
-.portada h1{
+.nombres{
   font-family:'Great Vibes',cursive;
-  font-size:42px;
-  margin-bottom:10px;
+  font-size:46px;
   line-height:1.2;
+  margin-bottom:10px;
 }
 
-.portada h2{
+.fecha-principal{
   font-family:'Playfair Display',serif;
-  font-size:18px;
   letter-spacing:3px;
-  margin-bottom:20px;
-}
-
-.fecha{
   font-size:20px;
   margin:15px 0;
 }
 
-/* FOTO PAREJA */
-.foto-pareja{
-  width:240px;
-  height:320px;
-  border-radius:22px;
-  overflow:hidden;
-  margin:25px 0;
-  box-shadow:0 15px 40px rgba(0,0,0,.35);
-}
-
-.foto-pareja img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:grayscale(100%) contrast(1.05);
-}
-
-/* TEXTO */
 .frase{
-  font-family:'Playfair Display',serif;
-  font-size:14px;
-  opacity:.9;
-  margin:20px 0;
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;
+  max-width:320px;
+  margin:25px auto;
+  opacity:.95;
 }
 
 .iniciales{
+  font-family:'Great Vibes',cursive;
+  font-size:48px;
+  color:var(--dorado);
   margin-top:15px;
-  font-size:22px;
-  letter-spacing:4px;
 }
 
-.play{
-  margin-top:25px;
-  font-size:14px;
-  cursor:pointer;
-  opacity:.9;
+.casamos{
+  letter-spacing:3px;
+  margin-top:10px;
 }
 
-/* ---------- SECCIÓN CLARA ---------- */
-.claro{
+/* ================= INFO ================= */
+.info{
   background:var(--marfil);
+  position:relative;
 }
 
-.titulo{
-  font-family:'Playfair Display',serif;
-  font-size:22px;
-  margin-bottom:15px;
+.info::before{
+  content:"";
+  position:absolute;
+  top:0;
+  width:100%;
+  height:120px;
+  background:url('flores-top.png') center/contain no-repeat;
 }
 
-.contador{
-  display:flex;
-  gap:15px;
-  margin:20px 0;
-}
-
-.contador div{
-  background:white;
-  padding:10px;
-  border-radius:10px;
-  min-width:70px;
-}
-
-.boton{
-  display:inline-block;
-  margin:10px 0;
-  padding:12px 22px;
-  background:var(--azul-rey);
-  color:white;
-  text-decoration:none;
-  border-radius:25px;
-  font-size:14px;
-}
-
-/* ---------- SECCIÓN FINAL ---------- */
-.final{
-  background:var(--azul-rey);
-  color:white;
-}
-
-.final .boton{
-  background:white;
-  color:var(--azul-rey);
-}
-
-small{
-  font-size:12px;
-  opacity:.85;
-}
-</style>
-</head>
-
-<body>
-
-<!-- 🎵 MÚSICA -->
-<audio id="musica" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_f4e0d74d3a.mp3" type="audio/mpeg">
-</audio>
-
-<!-- 1️⃣ PORTADA -->
-<section class="portada">
-  <h1>Adalberto Gómez<br>& Araneth Ortiz</h1>
-  <h2>¡NOS CASAMOS!</h2>
-  <div class="fecha">08 · 03 · 2026</div>
-
-  <!-- FOTO -->
-  <div class="foto-pareja">
-    <img src="foto-pareja.jpg" alt="Adalberto y Araneth">
-  </div>
-
-  <div class="frase">
-    “Así que ya no son dos, sino una sola carne.<br>
-    Por lo tanto, lo que Dios ha unido, que no lo separe ningún hombre.”<br>
-    <small>Mateo 19:6</small>
-  </div>
-
-  <div class="iniciales">A | A</div>
-
-  <div class="play" onclick="document.getElementById('musica').play()">
-    ▶ Dale play a nuestra canción
-  </div>
-</section>
-
-<!-- 2️⃣ INFORMACIÓN -->
-<section class="claro">
-  <div class="titulo">Domingo 08 de Marzo de 2026</div>
-
-  <div class="contador" id="contador"></div>
-
-  <p>
-    Será un placer para nosotros que nos acompañe junto a su familia
-    a la pequeña ceremonia donde se presentará un breve discurso
-    basado en la Biblia dirigido al nuevo matrimonio.
-  </p>
-
-  <p><strong>14:00 hrs</strong><br>Salón de eventos ZOMAY</p>
-  <a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb">Ver ubicación</a>
-
-  <p><strong>15:00 hrs</strong><br>Recepción</p>
-  <a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb">Ver ubicación</a>
-
-  <p><strong>Código de vestimenta</strong><br>Riguroso Formal</p>
-  <small>
-    Se solicita excluir azul rey y blanco.<br>
-    “Que su vestimenta muestre amor y respeto” (1 Timoteo 2:9)
-  </small>
-</section>
-
-<!-- 3️⃣ CONFIRMACIÓN -->
-<section class="final">
-  <div class="titulo">Sugerencia de regalos</div>
-
-  <a class="boton" href="https://www.amazon.com.mx/wedding/guest-view/3MBLMPJHP53YY">
-    Mesa de regalos
-  </a>
-
-  <div class="titulo">Confirmar asistencia</div>
-  <p>Antes del 15 de Febrero</p>
-
-  <a class="boton" href="https://wa.me/525574036195">Confirmar con Adalberto</a>
-  <a class="boton" href="https://wa.me/qr/ZOWANJ7IMQJ7F1">Confirmar con Araneth</a>
-
-  <p style="margin-top:30px;">
-    Esperamos contar con su presencia.<br>
-    Muchas gracias
-  </p>
-</section>
-
-<script>
-const evento = new Date("March 8, 2026 14:00:00").getTime();
-setInterval(()=>{
-  const ahora = new Date().getTime();
-  const diff = evento - ahora;
-
-  const d = Math.floor(diff/(1000*60*60*24));
-  const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-  const m = Math.floor((diff%(1000*60*60))/(1000*60));
-  const s = Math.floor((diff%(1000*60))/1000);
-
-  document.getElementById("contador").innerHTML = `
-    <div>${d}<br>Días</div>
-    <div>${h}<br>Horas</div>
-    <div>${m}<br>Min</div>
-    <div>${s}<br>Seg</div>`;
-},1000);
-</script>
-
-</body>
-</html>
+.info::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:120px;
+  background:url('flo
