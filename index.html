@@ -14,6 +14,30 @@
   --azul-rey:#0f2a44;
   --marfil:#f7f4ef;
   --acento:#b7c9c2;
+  .portada{
+  position: relative;
+  overflow: hidden;
+}
+
+.portada::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      rgba(15,42,68,0.65),
+      rgba(15,42,68,0.65)
+    ),
+    url("imagen-novios.jpg") center/cover no-repeat;
+  filter: blur(6px);
+  transform: scale(1.1);
+  z-index:0;
+}
+
+.portada > *{
+  position:relative;
+  z-index:1;
+}
 }
 
 *{
