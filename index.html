@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Adalberto & Araneth</title>
+<title>Adalberto & Araneth | Invitación de Boda</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --azul-rey:#0a1f44;
-  --marfil:#f8f5ef;
-  --dorado:#c9a44c;
+  --azul-rey:#0f2a44;
+  --marfil:#f7f4ef;
+  --acento:#b7c9c2;
 }
 
 *{
@@ -23,237 +23,211 @@
 }
 
 body{
-  font-family:'Playfair Display', serif;
-  background:var(--azul-rey);
-  color:#fff;
-  scroll-behavior:smooth;
+  font-family:'Montserrat',sans-serif;
+  background:var(--marfil);
+  color:#333;
 }
 
-/* SECCIONES */
 section{
   min-height:100vh;
-  padding:50px 25px;
+  padding:40px 20px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
+  animation:fade 1.5s ease;
 }
 
-/* PORTADA */
+@keyframes fade{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* ---------- PORTADA ---------- */
 .portada{
-  background:
-    linear-gradient(rgba(10,31,68,.85),rgba(10,31,68,.85)),
-    url("foto-pareja.jpg") center/cover no-repeat;
+  background:var(--azul-rey);
+  color:white;
 }
 
-.nombres{
-  font-family:'Great Vibes', cursive;
-  font-size:48px;
-  line-height:1.2;
-  animation:entrada 2s ease;
+.portada h1{
+  font-family:'Great Vibes',cursive;
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.portada h2{
+  font-family:'Playfair Display',serif;
+  font-size:18px;
+  letter-spacing:3px;
+  margin-bottom:20px;
 }
 
 .fecha{
+  font-size:20px;
   margin:15px 0;
-  letter-spacing:3px;
-  font-size:14px;
 }
 
 .frase{
-  font-size:13px;
-  line-height:1.6;
-  max-width:320px;
+  font-family:'Playfair Display',serif;
+  font-size:14px;
   opacity:.9;
+  margin:20px 0;
 }
 
 .iniciales{
-  font-family:'Great Vibes', cursive;
-  font-size:64px;
-  color:var(--dorado);
-  margin:20px 0;
+  margin-top:15px;
+  font-size:22px;
+  letter-spacing:4px;
 }
 
-.boton{
+.play{
   margin-top:25px;
-  padding:12px 28px;
-  border:1px solid var(--dorado);
-  color:#fff;
-  background:transparent;
-  text-decoration:none;
-  font-size:13px;
-  letter-spacing:2px;
-  cursor:pointer;
+  font-size:14px;
 }
 
-/* INFO */
-.info{
+/* ---------- SECCIÓN CLARA ---------- */
+.claro{
   background:var(--marfil);
-  color:#333;
 }
 
 .titulo{
-  letter-spacing:3px;
-  font-size:14px;
+  font-family:'Playfair Display',serif;
+  font-size:22px;
   margin-bottom:15px;
 }
 
-.evento{
-  margin:20px 0;
-  font-size:14px;
-  line-height:1.7;
-}
-
-.btn-mapa{
-  display:inline-block;
-  margin-top:10px;
-  font-size:12px;
-  text-decoration:none;
-  color:var(--azul-rey);
-  border-bottom:1px solid var(--azul-rey);
-}
-
-/* CONTADOR */
 .contador{
   display:flex;
-  gap:12px;
-  margin:25px 0;
+  gap:15px;
+  margin:20px 0;
 }
 
 .contador div{
-  background:#fff;
+  background:white;
   padding:10px;
-  min-width:60px;
-  border-radius:6px;
-  font-size:12px;
+  border-radius:10px;
+  min-width:70px;
 }
 
-/* RSVP */
-.rsvp{
+.boton{
+  display:inline-block;
+  margin:10px 0;
+  padding:12px 22px;
   background:var(--azul-rey);
-}
-
-.rsvp p{
+  color:white;
+  text-decoration:none;
+  border-radius:25px;
   font-size:14px;
-  max-width:320px;
-  line-height:1.6;
 }
 
-@keyframes entrada{
-  from{opacity:0; transform:translateY(25px);}
-  to{opacity:1; transform:translateY(0);}
+/* ---------- SECCIÓN FINAL ---------- */
+.final{
+  background:var(--azul-rey);
+  color:white;
+}
+
+.final .boton{
+  background:white;
+  color:var(--azul-rey);
+}
+
+small{
+  font-size:12px;
+  opacity:.85;
 }
 </style>
 </head>
 
 <body>
 
-<!-- AUDIO -->
-<audio id="musica" loop muted>
-  <source src="tu-cancion.mp3" type="audio/mpeg">
+<!-- 🎵 MÚSICA -->
+<audio controls loop style="display:none" id="musica">
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_f4e0d74d3a.mp3" type="audio/mpeg">
 </audio>
 
 <!-- 1️⃣ PORTADA -->
 <section class="portada">
-  <div class="iniciales">A | A</div>
-
-  <div class="nombres">
-    Adalberto Gómez<br>& Araneth Ortiz
-  </div>
-
+  <h1>Adalberto Gómez & Araneth Ortiz</h1>
+  <h2>¡NOS CASAMOS!</h2>
   <div class="fecha">08 · 03 · 2026</div>
 
-  <p class="frase">
-    “Así que ya no son dos, sino una sola carne…”
-    <br>Mateo 19:6
-  </p>
+  <div class="frase">
+    “Así que ya no son dos, sino una sola carne.<br>
+    Por lo tanto, lo que Dios ha unido, que no lo separe ningún hombre.”<br>
+    <small>Mateo 19:6</small>
+  </div>
 
-  <button class="boton" onclick="activarMusica()">
-    Reproduce nuestra canción
-  </button>
+  <div class="iniciales">A | A</div>
+
+  <div class="play" onclick="document.getElementById('musica').play()">
+    ▶ Dale play a nuestra canción
+  </div>
 </section>
 
 <!-- 2️⃣ INFORMACIÓN -->
-<section class="info">
-  <div class="titulo">DOMINGO 08 DE MARZO DE 2026</div>
+<section class="claro">
+  <div class="titulo">Domingo 08 de Marzo de 2026</div>
 
-  <div class="contador">
-    <div><span id="d"></span><br>Días</div>
-    <div><span id="h"></span><br>Horas</div>
-    <div><span id="m"></span><br>Min</div>
-    <div><span id="s"></span><br>Seg</div>
-  </div>
+  <div class="contador" id="contador"></div>
 
-  <div class="evento">
-    <strong>CEREMONIA</strong><br>
-    14:00 hrs<br>
-    Salón de eventos ZOMAY<br>
-    Priv. de San Luis 005, Coacalco
-    <br>
-    <a class="btn-mapa" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb" target="_blank">
-      Ver ubicación
-    </a>
-  </div>
-
-  <div class="evento">
-    <strong>RECEPCIÓN</strong><br>
-    15:00 hrs<br>
-    Salón de eventos ZOMAY
-  </div>
-
-  <p class="frase">
-    “RECOMENDACIONES: DEBIDO A QUE EL COLOR DEL TRAJE DEL NOVIO SERA AZUL Y EL DE LA NOVIA BLANCO, SE SOLICITA A LOS INVITADOS QUE EXCLUYAN DICHOS COLORES DE SU VESTIMENTA. Recuerde que su vestimenta debe mostrar amor y respeto”<br>
-    1 Timoteo 2:9
+  <p>
+  Será un placer para nosotros que nos acompañe junto a su familia a la pequeña ceremonia
+  donde se presentará un breve discurso basado en la Biblia dirigido al nuevo matrimonio.
   </p>
+
+  <p><strong>14:00 hrs</strong><br>Salón de eventos ZOMAY</p>
+  <a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb">Ver ubicación</a>
+
+  <p><strong>15:00 hrs</strong><br>Recepción</p>
+  <a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb">Ver ubicación</a>
+
+  <p><strong>Código de vestimenta</strong><br>Riguroso Formal</p>
+  <small>
+  Se solicita excluir azul rey y blanco.<br>
+  “Que su vestimenta muestre amor y respeto” (1 Timoteo 2:9)
+  </small>
 </section>
 
-<!-- 3️⃣ RSVP -->
-<section class="rsvp">
+<!-- 3️⃣ CONFIRMACIÓN -->
+<section class="final">
+  <div class="titulo">Sugerencia de regalos</div>
   <p>
-    Tu presencia es el mejor regalo, pero si deseas tener un detalle con nosotros, te dejamos lassiguientes sugerencias:
+    Tu presencia es el mejor regalo, pero si deseas tener un detalle con nosotros,
+    puedes considerar la siguiente opción.
   </p>
 
-  <a class="boton" href="https://www.amazon.com.mx/wedding/guest-view/3MBLMPJHP53YY" target="_blank">
-    Mesa de regalos
+  <a class="boton" href="https://www.amazon.com.mx/wedding/guest-view/3MBLMPJHP53YY">
+    Lluvia de regalos
   </a>
 
-  <p style="margin-top:25px;">
-    Confirmar antes del 15 de Febrero
-  </p>
+  <div class="titulo">Confirmar asistencia</div>
+  <p>Confirmar antes del 15 de Febrero</p>
 
-  <a class="boton" href="https://wa.me/525574036195" target="_blank">
-    Confirmar con Adalberto
-  </a>
-
-  <a class="boton" href="https://wa.me/qr/ZOWANJ7IMQJ7F1" target="_blank">
-    Confirmar con Araneth
-  </a>
+  <a class="boton" href="https://w.app/fgsjdr">Confirmar con Adalberto</a>
+  <a class="boton" href="https://wa.me/qr/ZOWANJ7IMQJ7F1">Confirmar con Araneth</a>
 
   <p style="margin-top:30px;">
-    Esperamos contar con su presencia.<br>
-    Muchas gracias 🤍
+    Esperamos contar con su presencia.<br>Muchas gracias
   </p>
 </section>
 
-<!-- SCRIPTS -->
 <script>
-function activarMusica(){
-  const audio=document.getElementById("musica");
-  audio.muted=false;
-  audio.volume=0.35;
-  audio.play();
-}
-
-const evento = new Date("2026-03-08T14:00:00").getTime();
-
+const evento = new Date("March 8, 2026 14:00:00").getTime();
 setInterval(()=>{
   const ahora = new Date().getTime();
   const diff = evento - ahora;
 
-  document.getElementById("d").innerText = Math.floor(diff/(1000*60*60*24));
-  document.getElementById("h").innerText = Math.floor((diff/(1000*60*60))%24);
-  document.getElementById("m").innerText = Math.floor((diff/(1000*60))%60);
-  document.getElementById("s").innerText = Math.floor((diff/1000)%60);
+  const d = Math.floor(diff/(1000*60*60*24));
+  const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const m = Math.floor((diff%(1000*60*60))/(1000*60));
+  const s = Math.floor((diff%(1000*60))/1000);
+
+  document.getElementById("contador").innerHTML = `
+    <div>${d}<br>Días</div>
+    <div>${h}<br>Horas</div>
+    <div>${m}<br>Min</div>
+    <div>${s}<br>Seg</div>`;
 },1000);
 </script>
 
