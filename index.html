@@ -8,7 +8,7 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- AOS Animaciones -->
+<!-- AOS -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <style>
@@ -21,7 +21,8 @@ body{
 }
 
 section{
-  padding:70px 25px;
+  padding:75px 25px;
+  position:relative;
 }
 
 .portada{
@@ -29,30 +30,50 @@ section{
   display:flex;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(rgba(11,42,74,.88),rgba(11,42,74,.88)),
-  url("https://i.imgur.com/6QKZQpZ.png") no-repeat center/cover;
+  background:linear-gradient(rgba(11,42,74,.9),rgba(11,42,74,.9));
+  overflow:hidden;
+}
+
+/* FLORES ACUARELA */
+.flor-superior,
+.flor-inferior{
+  position:absolute;
+  width:260px;
+  opacity:.85;
+  z-index:1;
+}
+
+.flor-superior{
+  top:-40px;
+  left:-40px;
+}
+
+.flor-inferior{
+  bottom:-40px;
+  right:-40px;
 }
 
 .contenido-portada{
   max-width:380px;
   margin:auto;
+  z-index:2;
 }
 
-/* NOMBRES – LUJO EDITORIAL */
+/* NOMBRES */
 .nombres{
   font-family:'Cormorant Garamond', serif;
   font-size:42px;
   font-weight:600;
-  line-height:1.05; /* interlineado premium */
-  letter-spacing:0.5px;
-  margin-bottom:18px;
+  line-height:1.05;
+  letter-spacing:.5px;
+  margin-bottom:20px;
 }
 
 .nombres span{
   display:block;
 }
 
-/* Animación suave personalizada */
+/* Animación nombres */
 .fade-nombre{
   opacity:0;
   transform:translateY(18px);
@@ -90,6 +111,12 @@ section{
   letter-spacing:5px;
 }
 
+.play{
+  margin-top:22px;
+  font-size:14px;
+  cursor:pointer;
+}
+
 .boton{
   display:inline-block;
   margin-top:25px;
@@ -123,12 +150,6 @@ h2{
 audio{
   display:none;
 }
-
-.play{
-  margin-top:22px;
-  font-size:14px;
-  cursor:pointer;
-}
 </style>
 </head>
 
@@ -140,9 +161,13 @@ audio{
 </audio>
 
 <section class="portada">
+
+  <!-- FLORES -->
+  <img src="https://i.imgur.com/6kKxZJc.png" class="flor-superior" data-aos="fade-down-right">
+  <img src="https://i.imgur.com/MR6QX8E.png" class="flor-inferior" data-aos="fade-up-left">
+
   <div class="contenido-portada">
 
-    <!-- NOMBRES CON ANIMACIÓN SUAVE -->
     <div class="nombres">
       <span class="fade-nombre">Adalberto Gómez</span>
       <span class="fade-nombre delay">&</span>
@@ -174,13 +199,6 @@ audio{
     <p>Salón de Eventos ZOMAY</p>
     <a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8" target="_blank">Ver ubicación</a>
   </div>
-
-  <div data-aos="fade-up" data-aos-delay="300">
-    <h2 style="margin-top:45px;">Recepción</h2>
-    <p>15:00 hrs</p>
-    <p>Salón de Eventos ZOMAY</p>
-    <a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8" target="_blank">Ver ubicación</a>
-  </div>
 </section>
 
 <section>
@@ -197,34 +215,9 @@ audio{
 </section>
 
 <section class="claro">
-  <div data-aos="zoom-in">
-    <h2>Código de Vestimenta</h2>
-    <p>Riguroso Formal</p>
-    <p style="font-size:13px;">
-      Favor de no usar azul rey ni blanco.<br>
-      “Su vestimenta debe mostrar amor y respeto”
-      <br>1 Timoteo 2:9
-    </p>
-  </div>
-</section>
-
-<section>
   <div data-aos="fade-up">
-    <h2>Regalos</h2>
-    <p>
-      Tu presencia es el mejor regalo,<br>
-      pero si deseas tener un detalle con nosotros:
-    </p>
-    <a class="boton" href="https://www.amazon.com.mx/wedding/guest-view/3MBLMPJHP53YY" target="_blank">
-      Ver mesa de regalos
-    </a>
-  </div>
-
-  <div data-aos="fade-up" data-aos-delay="300">
-    <h2 style="margin-top:45px;">Confirmar Asistencia</h2>
-    <p>Antes del 15 de Febrero</p>
-
-    <a class="boton" href="https://wa.me/525574036195="_blank">Confirmar con Adalberto</a><br><br>
+    <h2>Confirmar Asistencia</h2>
+    <a class="boton" href="https://w.app/fgsjdr" target="_blank">Confirmar con Adalberto</a><br><br>
     <a class="boton" href="https://wa.me/qr/ZOWANJ7IMQJ7F1" target="_blank">Confirmar con Araneth</a>
   </div>
 </section>
