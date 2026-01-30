@@ -3,150 +3,191 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Invitación de Boda</title>
+<title>Adalberto & Araneth</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- AOS -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body{
+:root{
+  --azul-rey:#0f2a44;
+  --marfil:#f8f5f0;
+  --floral:#dbe6e4;
+}
+
+*{
+  box-sizing:border-box;
   margin:0;
+  padding:0;
+}
+
+body{
   font-family:'Montserrat', sans-serif;
-  background:#0b2a4a;
-  color:#fff;
+  background:var(--marfil);
+  color:#333;
+  scroll-behavior:smooth;
+}
+
+/* ANIMACIONES */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 1.2s ease;
+}
+.fade.show{
+  opacity:1;
+  transform:none;
+}
+
+/* SECCIONES */
+.section{
+  min-height:100vh;
+  padding:50px 25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   text-align:center;
 }
 
-section{
-  padding:75px 25px;
+/* PORTADA */
+.cover{
+  background:var(--azul-rey);
+  color:white;
   position:relative;
 }
 
-.portada{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(rgba(11,42,74,.9),rgba(11,42,74,.9));
-  overflow:hidden;
-}
-
-/* FLORES ACUARELA */
-.flor-superior,
-.flor-inferior{
+.cover::before{
+  content:"";
   position:absolute;
-  width:260px;
-  opacity:.85;
-  z-index:1;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:url("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e") center/cover;
+  opacity:.15;
 }
 
-.flor-superior{
-  top:-40px;
-  left:-40px;
+.cover *{
+  position:relative;
 }
 
-.flor-inferior{
-  bottom:-40px;
-  right:-40px;
+.names{
+  font-family:'Great Vibes', cursive;
+  font-size:3.2rem;
+  line-height:1.15;
+  margin-bottom:15px;
 }
 
-.contenido-portada{
-  max-width:380px;
-  margin:auto;
-  z-index:2;
-}
-
-/* NOMBRES */
-.nombres{
-  font-family:'Cormorant Garamond', serif;
-  font-size:42px;
-  font-weight:600;
-  line-height:1.05;
-  letter-spacing:.5px;
-  margin-bottom:20px;
-}
-
-.nombres span{
-  display:block;
-}
-
-/* Animación nombres */
-.fade-nombre{
-  opacity:0;
-  transform:translateY(18px);
-  animation:fadeUp 1.4s ease forwards;
-}
-
-.fade-nombre.delay{
-  animation-delay:.6s;
-}
-
-@keyframes fadeUp{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-.fecha{
+.date{
   font-family:'Playfair Display', serif;
-  font-size:20px;
-  margin-bottom:22px;
+  font-size:1.4rem;
+  margin:10px 0;
   letter-spacing:2px;
 }
 
-.frase{
-  font-style:italic;
-  font-size:14px;
-  line-height:1.7;
-  margin:22px auto;
+.verse{
+  font-size:.95rem;
+  max-width:320px;
+  margin:20px auto;
+  line-height:1.6;
 }
 
-.iniciales{
-  font-size:15px;
-  margin:22px 0;
+.initials{
+  font-size:1.2rem;
   letter-spacing:5px;
-}
-
-.play{
-  margin-top:22px;
-  font-size:14px;
-  cursor:pointer;
-}
-
-.boton{
-  display:inline-block;
-  margin-top:25px;
-  padding:12px 30px;
-  background:#ffffff;
-  color:#0b2a4a;
-  text-decoration:none;
-  border-radius:30px;
-  font-weight:500;
-}
-
-.claro{
-  background:#f8f6f2;
-  color:#0b2a4a;
-}
-
-h2{
-  font-family:'Playfair Display', serif;
-  margin-bottom:12px;
-}
-
-.iconos span{
-  display:block;
   margin:10px 0;
 }
 
-.footer{
-  font-size:14px;
+.photo{
+  width:220px;
+  height:280px;
+  border-radius:20px;
+  overflow:hidden;
+  margin:25px 0;
+}
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:grayscale(100%);
 }
 
+/* INFO */
+.info{
+  background:var(--marfil);
+}
+
+.title{
+  font-family:'Playfair Display', serif;
+  font-size:1.5rem;
+  margin-bottom:15px;
+}
+
+.countdown{
+  display:flex;
+  gap:12px;
+  margin:20px 0;
+}
+.time{
+  background:white;
+  padding:10px 12px;
+  border-radius:12px;
+  min-width:60px;
+}
+.time span{
+  display:block;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.card{
+  background:white;
+  border-radius:20px;
+  padding:25px;
+  margin:20px 0;
+  max-width:360px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 25px;
+  background:var(--azul-rey);
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:.9rem;
+}
+
+/* ITINERARIO */
+.icons{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  font-size:.8rem;
+}
+.icons i{
+  font-size:1.4rem;
+  margin-bottom:5px;
+}
+
+/* FINAL */
+.final{
+  background:var(--azul-rey);
+  color:white;
+}
+
+.final .btn{
+  background:white;
+  color:var(--azul-rey);
+}
+
+/* AUDIO */
 audio{
   display:none;
 }
@@ -155,86 +196,106 @@ audio{
 
 <body>
 
-<!-- AUDIO -->
-<audio id="musica" loop>
-  <source src="TU_CANCION.mp3" type="audio/mpeg">
+<!-- MUSICA -->
+<audio autoplay loop>
+  <source src="TU-CANCION.mp3" type="audio/mpeg">
 </audio>
 
-<section class="portada">
+<!-- PORTADA -->
+<section class="section cover fade">
+  <div class="names">Adalberto Gómez<br>& Araneth Ortiz</div>
+  <div class="date">08 · 03 · 2026</div>
 
-  <!-- FLORES -->
-  <img src="https://i.imgur.com/6kKxZJc.png" class="flor-superior" data-aos="fade-down-right">
-  <img src="https://i.imgur.com/MR6QX8E.png" class="flor-inferior" data-aos="fade-up-left">
+  <div class="verse">
+    “Así que ya no son dos, sino una sola carne.  
+    Lo que Dios ha unido, que no lo separe ningún hombre.”  
+    <br><b>Mateo 19:6</b>
+  </div>
 
-  <div class="contenido-portada">
+  <div class="initials">A | A</div>
+  <div>¡Nos casamos!</div>
 
-    <div class="nombres">
-      <span class="fade-nombre">Adalberto Gómez</span>
-      <span class="fade-nombre delay">&</span>
-      <span class="fade-nombre delay">Araneth Ortiz</span>
-    </div>
-
-    <div class="fecha" data-aos="fade-up">08 · 03 · 2026</div>
-
-    <div class="frase" data-aos="fade-up" data-aos-delay="200">
-      “Así que ya no son dos, sino una sola carne.
-      Por lo tanto, lo que Dios ha unido, que no lo separe ningún hombre.”
-      <br>Mateo 19:6
-    </div>
-
-    <div class="iniciales" data-aos="fade-up" data-aos-delay="300">A | A</div>
-
-    <div class="play" onclick="document.getElementById('musica').play()" data-aos="fade-up" data-aos-delay="400">
-      ▶ Dale play a nuestra canción
-    </div>
-
+  <div class="photo">
+    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
   </div>
 </section>
 
-<section class="claro">
-  <div data-aos="fade-up">
-    <h2>La Ceremonia</h2>
-    <p>Domingo 08 de Marzo de 2026</p>
-    <p>14:00 hrs</p>
-    <p>Salón de Eventos ZOMAY</p>
-    <a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8" target="_blank">Ver ubicación</a>
+<!-- INFO -->
+<section class="section info fade">
+  <div class="title">Domingo 08 de Marzo de 2026</div>
+
+  <div class="countdown" id="countdown"></div>
+
+  <div class="card">
+    <b>Ceremonia</b><br><br>
+    14:00 hrs<br>
+    Salón ZOMAY<br>
+    <small>Priv. de San Luis 005, Coacalco</small><br>
+    <a class="btn" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8">Ver ubicación</a>
+  </div>
+
+  <div class="card">
+    <b>Recepción</b><br><br>
+    15:00 hrs<br>
+    Salón ZOMAY<br>
+    <a class="btn" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8">Ver ubicación</a>
+  </div>
+
+  <div class="icons">
+    <div><i class="fa-solid fa-church"></i><br>Ceremonia</div>
+    <div><i class="fa-solid fa-champagne-glasses"></i><br>Brindis</div>
+    <div><i class="fa-solid fa-utensils"></i><br>Banquete</div>
+    <div><i class="fa-solid fa-music"></i><br>Fiesta</div>
   </div>
 </section>
 
-<section>
-  <div data-aos="fade-up">
-    <h2>Itinerario</h2>
-    <div class="iconos">
-      <span>💒 Ceremonia</span>
-      <span>🍽 Banquete</span>
-      <span>🥂 Brindis</span>
-      <span>🎉 Fiesta</span>
-      <span>🎊 Hora loca</span>
-    </div>
-  </div>
+<!-- FINAL -->
+<section class="section final fade">
+  <div class="title">Sugerencia de Regalos</div>
+  <p>Tu presencia es el mejor regalo, pero si deseas tener un detalle:</p>
+  <a class="btn" href="https://www.amazon.com.mx/wedding/guest-view/3MBLMPJHP53YY">Mesa de regalos</a>
+
+  <br><br>
+
+  <div class="title">Confirmar asistencia</div>
+  <p>Antes del 15 de Febrero</p>
+  <a class="btn" href="https://wa.me/525574036195">Confirmar con Adalberto</a><br><br>
+  <a class="btn" href="https://wa.me/qr/ZOWANJ7IMQJ7F1">Confirmar con Araneth</a>
+
+  <br><br>
+  <p>Esperamos contar con su presencia.<br>Muchas gracias</p>
 </section>
 
-<section class="claro">
-  <div data-aos="fade-up">
-    <h2>Confirmar Asistencia</h2>
-    <a class="boton" href="https://w.app/fgsjdr" target="_blank">Confirmar con Adalberto</a><br><br>
-    <a class="boton" href="https://wa.me/qr/ZOWANJ7IMQJ7F1" target="_blank">Confirmar con Araneth</a>
-  </div>
-</section>
-
-<section class="footer">
-  <div data-aos="fade-in">
-    <p>Esperamos contar con su presencia.<br>Muchas gracias 💙</p>
-  </div>
-</section>
-
-<!-- AOS -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-AOS.init({
-  duration:1200,
-  once:true
-});
+// SCROLL ANIMATION
+const faders=document.querySelectorAll('.fade');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('show');
+  });
+},{threshold:.2});
+faders.forEach(f=>observer.observe(f));
+
+// COUNTDOWN
+const target=new Date("2026-03-08T14:00:00").getTime();
+const el=document.getElementById("countdown");
+
+setInterval(()=>{
+  const now=new Date().getTime();
+  const diff=target-now;
+
+  const d=Math.floor(diff/(1000*60*60*24));
+  const h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const m=Math.floor((diff%(1000*60*60))/(1000*60));
+  const s=Math.floor((diff%(1000*60))/1000);
+
+  el.innerHTML=`
+    <div class="time"><span>${d}</span>Días</div>
+    <div class="time"><span>${h}</span>Horas</div>
+    <div class="time"><span>${m}</span>Min</div>
+    <div class="time"><span>${s}</span>Seg</div>
+  `;
+},1000);
 </script>
 
 </body>
