@@ -6,7 +6,7 @@
 
 <title>Adalberto & Araneth | Invitación de Boda</title>
 
-<!-- Google Fonts -->
+<!-- Fuentes -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -28,7 +28,7 @@ body{
   color:#333;
 }
 
-/* ---------- SECCIONES ---------- */
+/* ---------- SECCIONES GENERALES ---------- */
 section{
   min-height:100vh;
   padding:50px 25px;
@@ -66,12 +66,12 @@ section{
 
 .nombres{
   font-family:'Great Vibes',cursive;
-  font-size:42px;
+  font-size:44px;
   line-height:1.2;
   margin-bottom:15px;
 }
 
-.fecha-grande{
+.fecha{
   font-family:'Playfair Display',serif;
   letter-spacing:4px;
   font-size:18px;
@@ -87,24 +87,23 @@ section{
 
 .iniciales{
   font-family:'Great Vibes',cursive;
-  font-size:28px;
-  margin:20px 0;
+  font-size:30px;
+  margin:25px 0 10px;
 }
 
 .nos-casamos{
-  letter-spacing:3px;
   font-size:14px;
-  margin-bottom:20px;
+  letter-spacing:3px;
+  margin-bottom:25px;
 }
 
 .play{
-  margin-top:15px;
   font-size:13px;
   cursor:pointer;
   text-decoration:underline;
 }
 
-/* ---------- INFO ---------- */
+/* ---------- INFORMACIÓN ---------- */
 .info{
   background:var(--marfil);
 }
@@ -113,6 +112,7 @@ section{
   font-family:'Playfair Display',serif;
   font-size:22px;
   margin-bottom:20px;
+  text-transform:uppercase;
 }
 
 .contador{
@@ -124,21 +124,21 @@ section{
 .contador div{
   background:white;
   padding:12px;
-  border-radius:12px;
+  border-radius:14px;
   min-width:65px;
   font-size:13px;
 }
 
 .bloque{
   max-width:340px;
-  margin:20px 0;
   font-size:14px;
+  margin:20px 0;
 }
 
 .boton{
   display:inline-block;
   margin:10px 0;
-  padding:12px 24px;
+  padding:12px 26px;
   border-radius:30px;
   background:var(--azul-rey);
   color:white;
@@ -148,18 +148,20 @@ section{
 
 /* ---------- ITINERARIO ---------- */
 .itinerario{
+  width:100%;
+  max-width:340px;
   text-align:left;
   font-size:14px;
-  margin-top:20px;
 }
 
 .itinerario div{
-  margin:6px 0;
+  margin:8px 0;
 }
 
 /* ---------- VESTIMENTA ---------- */
 .vestimenta{
   margin-top:25px;
+  max-width:340px;
   font-size:14px;
 }
 
@@ -191,11 +193,11 @@ small{
 <!-- 1️⃣ PORTADA -->
 <section class="portada">
   <div class="nombres">Adalberto Gómez<br>& Araneth Ortiz</div>
-  <div class="fecha-grande">08 · 03 · 2026</div>
+  <div class="fecha">08 · 03 · 2026</div>
 
   <div class="frase">
-    “Así que ya no son dos, sino una sola carne.<br>
-    Por lo tanto, lo que Dios ha unido, que no lo separe ningún hombre.”<br>
+    “Así que ya no son dos, sino una sola carne.
+    Por lo tanto, lo que Dios ha unido, que no lo separe ningún hombre…”<br>
     <small>Mateo 19:6</small>
   </div>
 
@@ -214,8 +216,9 @@ small{
   <div class="contador" id="contador"></div>
 
   <div class="bloque">
-    Será un placer para nosotros que nos acompañe junto a su familia a la pequeña ceremonia
-    en donde se presentará un breve discurso basado en la Biblia dirigido al nuevo matrimonio.
+    Será un placer para nosotros que nos acompañe junto a su familia
+    a la pequeña ceremonia en donde se presentará un breve discurso
+    basado en la Biblia dirigido al nuevo matrimonio.
   </div>
 
   <div class="bloque">
@@ -235,6 +238,11 @@ small{
   </div>
 
   <a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb">Ver ubicación</a>
+</section>
+
+<!-- 3️⃣ ITINERARIO Y VESTIMENTA -->
+<section class="info">
+  <div class="titulo">Itinerario</div>
 
   <div class="itinerario">
     <div>🕊 Ceremonia — 2:00 pm</div>
@@ -244,22 +252,25 @@ small{
     <div>🎉 Fiesta — 4:20 pm</div>
     <div>🎂 Pastel — 6:00 pm</div>
     <div>📸 Cabina de fotos — 6:30 pm</div>
+    <div>✨ Fin</div>
   </div>
 
   <div class="vestimenta">
-    <strong>Código de vestimenta</strong><br>
+    <strong>Código de vestimenta</strong><br><br>
     Riguroso Formal<br><br>
     <small>
       Debido a que el traje del novio será azul rey y el vestido de la novia blanco,
-      se solicita excluir dichos colores.<br>
-      “Que su vestimenta muestre amor y respeto” (1 Timoteo 2:9)
+      se solicita excluir dichos colores.<br><br>
+      “Que su vestimenta muestre amor y respeto”
+      (1 Timoteo 2:9)
     </small>
   </div>
 </section>
 
-<!-- 3️⃣ CONFIRMACIÓN -->
+<!-- 4️⃣ CONFIRMACIÓN -->
 <section class="final">
   <div class="titulo">Sugerencia de regalos</div>
+
   <p>
     Tu presencia es el mejor regalo, pero si deseas tener un detalle con nosotros,
     te dejamos la siguiente opción.
