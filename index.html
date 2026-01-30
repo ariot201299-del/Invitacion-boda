@@ -7,37 +7,13 @@
 <title>Adalberto & Araneth | Invitación de Boda</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --azul-rey:#0f2a44;
   --marfil:#f7f4ef;
   --acento:#b7c9c2;
-  .portada{
-  position: relative;
-  overflow: hidden;
-}
-
-.portada::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(
-      rgba(15,42,68,0.65),
-      rgba(15,42,68,0.65)
-    ),
-    url("foto-pareja.jpg") center/cover no-repeat;
-  filter: blur(6px);
-  transform: scale(1.1);
-  z-index:0;
-}
-
-.portada > *{
-  position:relative;
-  z-index:1;
-}
 }
 
 *{
@@ -52,100 +28,142 @@ body{
   color:#333;
 }
 
+/* ---------- SECCIONES ---------- */
 section{
   min-height:100vh;
-  padding:40px 20px;
+  padding:50px 25px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-  animation:fade 1.5s ease;
-}
-
-@keyframes fade{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
 }
 
 /* ---------- PORTADA ---------- */
 .portada{
+  position:relative;
   background:var(--azul-rey);
   color:white;
+  overflow:hidden;
 }
 
-.portada h1{
+.portada::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(15,42,68,.75),rgba(15,42,68,.75)),
+    url("img/foto-pareja.jpg") center/cover no-repeat;
+  filter:blur(6px);
+  transform:scale(1.1);
+  z-index:0;
+}
+
+.portada *{
+  position:relative;
+  z-index:1;
+}
+
+.nombres{
   font-family:'Great Vibes',cursive;
   font-size:42px;
-  margin-bottom:10px;
+  line-height:1.2;
+  margin-bottom:15px;
 }
 
-.portada h2{
+.fecha-grande{
   font-family:'Playfair Display',serif;
+  letter-spacing:4px;
   font-size:18px;
-  letter-spacing:3px;
   margin-bottom:20px;
-}
-
-.fecha{
-  font-size:20px;
-  margin:15px 0;
 }
 
 .frase{
   font-family:'Playfair Display',serif;
   font-size:14px;
-  opacity:.9;
-  margin:20px 0;
+  max-width:320px;
+  opacity:.95;
 }
 
 .iniciales{
-  margin-top:15px;
-  font-size:22px;
-  letter-spacing:4px;
+  font-family:'Great Vibes',cursive;
+  font-size:28px;
+  margin:20px 0;
+}
+
+.nos-casamos{
+  letter-spacing:3px;
+  font-size:14px;
+  margin-bottom:20px;
 }
 
 .play{
-  margin-top:25px;
-  font-size:14px;
+  margin-top:15px;
+  font-size:13px;
+  cursor:pointer;
+  text-decoration:underline;
 }
 
-/* ---------- SECCIÓN CLARA ---------- */
-.claro{
+/* ---------- INFO ---------- */
+.info{
   background:var(--marfil);
 }
 
 .titulo{
   font-family:'Playfair Display',serif;
   font-size:22px;
-  margin-bottom:15px;
+  margin-bottom:20px;
 }
 
 .contador{
   display:flex;
-  gap:15px;
+  gap:10px;
   margin:20px 0;
 }
 
 .contador div{
   background:white;
-  padding:10px;
-  border-radius:10px;
-  min-width:70px;
+  padding:12px;
+  border-radius:12px;
+  min-width:65px;
+  font-size:13px;
+}
+
+.bloque{
+  max-width:340px;
+  margin:20px 0;
+  font-size:14px;
 }
 
 .boton{
   display:inline-block;
   margin:10px 0;
-  padding:12px 22px;
+  padding:12px 24px;
+  border-radius:30px;
   background:var(--azul-rey);
   color:white;
   text-decoration:none;
-  border-radius:25px;
   font-size:14px;
 }
 
-/* ---------- SECCIÓN FINAL ---------- */
+/* ---------- ITINERARIO ---------- */
+.itinerario{
+  text-align:left;
+  font-size:14px;
+  margin-top:20px;
+}
+
+.itinerario div{
+  margin:6px 0;
+}
+
+/* ---------- VESTIMENTA ---------- */
+.vestimenta{
+  margin-top:25px;
+  font-size:14px;
+}
+
+/* ---------- FINAL ---------- */
 .final{
   background:var(--azul-rey);
   color:white;
@@ -158,23 +176,22 @@ section{
 
 small{
   font-size:12px;
-  opacity:.85;
+  opacity:.9;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🎵 MÚSICA -->
-<audio controls loop style="display:none" id="musica">
+<!-- AUDIO -->
+<audio id="musica" loop>
   <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_f4e0d74d3a.mp3" type="audio/mpeg">
 </audio>
 
 <!-- 1️⃣ PORTADA -->
 <section class="portada">
-  <h1>Adalberto Gómez & Araneth Ortiz</h1>
-  <h2>¡NOS CASAMOS!</h2>
-  <div class="fecha">08 · 03 · 2026</div>
+  <div class="nombres">Adalberto Gómez<br>& Araneth Ortiz</div>
+  <div class="fecha-grande">08 · 03 · 2026</div>
 
   <div class="frase">
     “Así que ya no son dos, sino una sola carne.<br>
@@ -183,6 +200,7 @@ small{
   </div>
 
   <div class="iniciales">A | A</div>
+  <div class="nos-casamos">¡NOS CASAMOS!</div>
 
   <div class="play" onclick="document.getElementById('musica').play()">
     ▶ Dale play a nuestra canción
@@ -190,27 +208,53 @@ small{
 </section>
 
 <!-- 2️⃣ INFORMACIÓN -->
-<section class="claro">
+<section class="info">
   <div class="titulo">Domingo 08 de Marzo de 2026</div>
 
   <div class="contador" id="contador"></div>
 
-  <p>
-  Será un placer para nosotros que nos acompañe junto a su familia a la pequeña ceremonia
-  donde se presentará un breve discurso basado en la Biblia dirigido al nuevo matrimonio.
-  </p>
+  <div class="bloque">
+    Será un placer para nosotros que nos acompañe junto a su familia a la pequeña ceremonia
+    en donde se presentará un breve discurso basado en la Biblia dirigido al nuevo matrimonio.
+  </div>
 
-  <p><strong>14:00 hrs</strong><br>Salón de eventos ZOMAY</p>
+  <div class="bloque">
+    <strong>14:00 hrs</strong><br>
+    Ceremonia<br>
+    Salón de eventos ZOMAY<br>
+    Priv. de San Luis 005, La Magdalena Huizachitla,
+    55715 San Francisco Coacalco, Méx.
+  </div>
+
   <a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb">Ver ubicación</a>
 
-  <p><strong>15:00 hrs</strong><br>Recepción</p>
+  <div class="bloque">
+    <strong>15:00 hrs</strong><br>
+    Recepción<br>
+    Salón de eventos ZOMAY
+  </div>
+
   <a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb">Ver ubicación</a>
 
-  <p><strong>Código de vestimenta</strong><br>Riguroso Formal</p>
-  <small>
-  Se solicita excluir azul rey y blanco.<br>
-  “Que su vestimenta muestre amor y respeto” (1 Timoteo 2:9)
-  </small>
+  <div class="itinerario">
+    <div>🕊 Ceremonia — 2:00 pm</div>
+    <div>🥂 Recepción — 2:40 pm</div>
+    <div>🍽 Banquete — 3:00 pm</div>
+    <div>💃 Baile de novios — 4:00 pm</div>
+    <div>🎉 Fiesta — 4:20 pm</div>
+    <div>🎂 Pastel — 6:00 pm</div>
+    <div>📸 Cabina de fotos — 6:30 pm</div>
+  </div>
+
+  <div class="vestimenta">
+    <strong>Código de vestimenta</strong><br>
+    Riguroso Formal<br><br>
+    <small>
+      Debido a que el traje del novio será azul rey y el vestido de la novia blanco,
+      se solicita excluir dichos colores.<br>
+      “Que su vestimenta muestre amor y respeto” (1 Timoteo 2:9)
+    </small>
+  </div>
 </section>
 
 <!-- 3️⃣ CONFIRMACIÓN -->
@@ -218,7 +262,7 @@ small{
   <div class="titulo">Sugerencia de regalos</div>
   <p>
     Tu presencia es el mejor regalo, pero si deseas tener un detalle con nosotros,
-    puedes considerar la siguiente opción.
+    te dejamos la siguiente opción.
   </p>
 
   <a class="boton" href="https://www.amazon.com.mx/wedding/guest-view/3MBLMPJHP53YY">
@@ -229,18 +273,26 @@ small{
   <p>Confirmar antes del 15 de Febrero</p>
 
   <a class="boton" href="https://wa.me/525574036195">Confirmar con Adalberto</a>
-  <a class="boton" href="https://wa.me/qr/ZOWANJ7IMQJ7F1">Confirmar con Araneth</a>
+  <a class="boton" href="https://wa.me/525610168659">Confirmar con Araneth</a>
 
   <p style="margin-top:30px;">
-    Esperamos contar con su presencia.<br>Muchas gracias
+    Esperamos contar con su presencia.<br>
+    Muchas gracias
   </p>
 </section>
 
 <script>
 const evento = new Date("March 8, 2026 14:00:00").getTime();
+
 setInterval(()=>{
   const ahora = new Date().getTime();
   const diff = evento - ahora;
+
+  if(diff <= 0){
+    document.getElementById("contador").innerHTML =
+      "<div>¡Hoy es el gran día! 💍</div>";
+    return;
+  }
 
   const d = Math.floor(diff/(1000*60*60*24));
   const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
