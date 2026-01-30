@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Adalberto & Araneth | Invitación de Boda</title>
+<title>Adalberto & Araneth</title>
 
-<!-- FUENTES -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --azul-rey:#0f2a44;
-  --marfil:#f7f4ef;
+  --azul-rey:#0a1f44;
+  --marfil:#f8f5ef;
   --dorado:#c9a44c;
 }
 
@@ -23,14 +23,16 @@
 }
 
 body{
-  font-family:'Montserrat',sans-serif;
-  background:var(--marfil);
-  color:#333;
+  font-family:'Playfair Display', serif;
+  background:var(--azul-rey);
+  color:#fff;
+  scroll-behavior:smooth;
 }
 
+/* SECCIONES */
 section{
   min-height:100vh;
-  padding:50px 20px;
+  padding:50px 25px;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -38,76 +40,222 @@ section{
   text-align:center;
 }
 
-/* ANIMACIONES */
-.fade-up{
-  animation:fadeUp 1.4s ease forwards;
-}
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(25px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-/* ================= PORTADA ================= */
+/* PORTADA */
 .portada{
   background:
-    linear-gradient(rgba(15,42,68,.75), rgba(15,42,68,.75)),
-    url('foto-pareja.jpg') center/cover no-repeat;
-  color:white;
+    linear-gradient(rgba(10,31,68,.85),rgba(10,31,68,.85)),
+    url("foto-pareja.jpg") center/cover no-repeat;
 }
 
 .nombres{
-  font-family:'Great Vibes',cursive;
-  font-size:46px;
+  font-family:'Great Vibes', cursive;
+  font-size:48px;
   line-height:1.2;
-  margin-bottom:10px;
+  animation:entrada 2s ease;
 }
 
-.fecha-principal{
-  font-family:'Playfair Display',serif;
-  letter-spacing:3px;
-  font-size:20px;
+.fecha{
   margin:15px 0;
+  letter-spacing:3px;
+  font-size:14px;
 }
 
 .frase{
-  font-family:'Cormorant Garamond',serif;
-  font-size:16px;
+  font-size:13px;
+  line-height:1.6;
   max-width:320px;
-  margin:25px auto;
-  opacity:.95;
+  opacity:.9;
 }
 
 .iniciales{
-  font-family:'Great Vibes',cursive;
-  font-size:48px;
+  font-family:'Great Vibes', cursive;
+  font-size:64px;
   color:var(--dorado);
-  margin-top:15px;
+  margin:20px 0;
 }
 
-.casamos{
-  letter-spacing:3px;
-  margin-top:10px;
+.boton{
+  margin-top:25px;
+  padding:12px 28px;
+  border:1px solid var(--dorado);
+  color:#fff;
+  background:transparent;
+  text-decoration:none;
+  font-size:13px;
+  letter-spacing:2px;
+  cursor:pointer;
 }
 
-/* ================= INFO ================= */
+/* INFO */
 .info{
   background:var(--marfil);
-  position:relative;
+  color:#333;
 }
 
-.info::before{
-  content:"";
-  position:absolute;
-  top:0;
-  width:100%;
-  height:120px;
-  background:url('flores-top.png') center/contain no-repeat;
+.titulo{
+  letter-spacing:3px;
+  font-size:14px;
+  margin-bottom:15px;
 }
 
-.info::after{
-  content:"";
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:120px;
-  background:url('flo
+.evento{
+  margin:20px 0;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.btn-mapa{
+  display:inline-block;
+  margin-top:10px;
+  font-size:12px;
+  text-decoration:none;
+  color:var(--azul-rey);
+  border-bottom:1px solid var(--azul-rey);
+}
+
+/* CONTADOR */
+.contador{
+  display:flex;
+  gap:12px;
+  margin:25px 0;
+}
+
+.contador div{
+  background:#fff;
+  padding:10px;
+  min-width:60px;
+  border-radius:6px;
+  font-size:12px;
+}
+
+/* RSVP */
+.rsvp{
+  background:var(--azul-rey);
+}
+
+.rsvp p{
+  font-size:14px;
+  max-width:320px;
+  line-height:1.6;
+}
+
+@keyframes entrada{
+  from{opacity:0; transform:translateY(25px);}
+  to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- AUDIO -->
+<audio id="musica" loop muted>
+  <source src="tu-cancion.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 1️⃣ PORTADA -->
+<section class="portada">
+  <div class="iniciales">A | A</div>
+
+  <div class="nombres">
+    Adalberto Gómez<br>& Araneth Ortiz
+  </div>
+
+  <div class="fecha">08 · 03 · 2026</div>
+
+  <p class="frase">
+    “Así que ya no son dos, sino una sola carne…”
+    <br>Mateo 19:6
+  </p>
+
+  <button class="boton" onclick="activarMusica()">
+    Reproduce nuestra canción
+  </button>
+</section>
+
+<!-- 2️⃣ INFORMACIÓN -->
+<section class="info">
+  <div class="titulo">DOMINGO 08 DE MARZO DE 2026</div>
+
+  <div class="contador">
+    <div><span id="d"></span><br>Días</div>
+    <div><span id="h"></span><br>Horas</div>
+    <div><span id="m"></span><br>Min</div>
+    <div><span id="s"></span><br>Seg</div>
+  </div>
+
+  <div class="evento">
+    <strong>CEREMONIA</strong><br>
+    14:00 hrs<br>
+    Salón de eventos ZOMAY<br>
+    Priv. de San Luis 005, Coacalco
+    <br>
+    <a class="btn-mapa" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb" target="_blank">
+      Ver ubicación
+    </a>
+  </div>
+
+  <div class="evento">
+    <strong>RECEPCIÓN</strong><br>
+    15:00 hrs<br>
+    Salón de eventos ZOMAY
+  </div>
+
+  <p class="frase">
+    “RECOMENDACIONES: DEBIDO A QUE EL COLOR DEL TRAJE DEL NOVIO SERA AZUL Y EL DE LA NOVIA BLANCO, SE SOLICITA A LOS INVITADOS QUE EXCLUYAN DICHOS COLORES DE SU VESTIMENTA. Recuerde que su vestimenta debe mostrar amor y respeto”<br>
+    1 Timoteo 2:9
+  </p>
+</section>
+
+<!-- 3️⃣ RSVP -->
+<section class="rsvp">
+  <p>
+    Tu presencia es el mejor regalo, pero si deseas tener un detalle con nosotros, te dejamos lassiguientes sugerencias:
+  </p>
+
+  <a class="boton" href="https://www.amazon.com.mx/wedding/guest-view/3MBLMPJHP53YY" target="_blank">
+    Mesa de regalos
+  </a>
+
+  <p style="margin-top:25px;">
+    Confirmar antes del 15 de Febrero
+  </p>
+
+  <a class="boton" href="https://wa.me/525574036195" target="_blank">
+    Confirmar con Adalberto
+  </a>
+
+  <a class="boton" href="https://wa.me/qr/ZOWANJ7IMQJ7F1" target="_blank">
+    Confirmar con Araneth
+  </a>
+
+  <p style="margin-top:30px;">
+    Esperamos contar con su presencia.<br>
+    Muchas gracias 🤍
+  </p>
+</section>
+
+<!-- SCRIPTS -->
+<script>
+function activarMusica(){
+  const audio=document.getElementById("musica");
+  audio.muted=false;
+  audio.volume=0.35;
+  audio.play();
+}
+
+const evento = new Date("2026-03-08T14:00:00").getTime();
+
+setInterval(()=>{
+  const ahora = new Date().getTime();
+  const diff = evento - ahora;
+
+  document.getElementById("d").innerText = Math.floor(diff/(1000*60*60*24));
+  document.getElementById("h").innerText = Math.floor((diff/(1000*60*60))%24);
+  document.getElementById("m").innerText = Math.floor((diff/(1000*60))%60);
+  document.getElementById("s").innerText = Math.floor((diff/1000)%60);
+},1000);
+</script>
+
+</body>
+</html>
