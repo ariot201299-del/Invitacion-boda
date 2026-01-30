@@ -6,12 +6,12 @@
 <title>Adalberto & Araneth</title>
 
 <!-- FUENTES -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --azul-rey:#0f2a44;
-  --crema:#f8f5f0;
+  --azul-rey:#0e2a47;
+  --crema:#f9f6f1;
   --olivo:#8a9a5b;
 }
 
@@ -20,15 +20,29 @@ body{
   font-family:'Playfair Display', serif;
   background:var(--crema);
   color:#333;
+  scroll-behavior:smooth;
+}
+
+/* ANIMACIONES */
+.fade{
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 1.2s ease;
+}
+.fade.visible{
+  opacity:1;
+  transform:translateY(0);
 }
 
 section{
-  padding:55px 20px;
+  padding:70px 22px;
   text-align:center;
+  position:relative;
+  overflow:hidden;
 }
 
 h1,h2,h3{
-  margin:12px 0;
+  margin:14px 0;
 }
 
 .script{
@@ -37,19 +51,35 @@ h1,h2,h3{
 
 .titulo{
   text-transform:uppercase;
-  letter-spacing:2px;
-  font-size:14px;
+  letter-spacing:2.5px;
+  font-size:13px;
+  color:#555;
+}
+
+/* FLORES */
+.flor-top, .flor-bottom{
+  position:absolute;
+  width:180px;
+  opacity:.25;
+}
+.flor-top{
+  top:-40px;
+  right:-40px;
+}
+.flor-bottom{
+  bottom:-40px;
+  left:-40px;
 }
 
 /* BOTONES */
 .boton{
   display:inline-block;
-  margin:12px auto;
-  padding:14px 26px;
+  margin:14px auto;
+  padding:14px 28px;
   background:var(--azul-rey);
   color:white;
   text-decoration:none;
-  border-radius:30px;
+  border-radius:40px;
   font-size:14px;
 }
 
@@ -59,37 +89,37 @@ h1,h2,h3{
   color:white;
 }
 
-.portada img{
+.portada img.foto{
   width:80%;
   max-width:320px;
-  border-radius:24px;
-  margin:25px auto;
+  border-radius:26px;
+  margin:30px auto;
   display:block;
   filter:grayscale(100%) contrast(1.1);
 }
 
 .fecha{
-  letter-spacing:3px;
-  font-weight:600;
+  letter-spacing:4px;
+  font-weight:500;
 }
 
 .verso{
   font-size:14px;
   opacity:.9;
-  margin:25px 0;
+  margin:30px 0;
 }
 
 .iniciales{
-  letter-spacing:4px;
-  margin-top:15px;
+  letter-spacing:5px;
+  margin-top:18px;
 }
 
 /* INFO */
 .itinerario{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  margin-top:25px;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:30px;
   font-size:14px;
 }
 
@@ -103,7 +133,7 @@ h1,h2,h3{
 #contador span{
   display:inline-block;
   margin:6px;
-  font-size:18px;
+  font-size:17px;
 }
 </style>
 </head>
@@ -111,123 +141,127 @@ h1,h2,h3{
 <body>
 
 <!-- 🌸 PORTADA -->
-<section class="portada">
+<section class="portada fade">
+<img src="https://i.imgur.com/6xKQq5F.png" class="flor-top">
+<img src="https://i.imgur.com/6xKQq5F.png" class="flor-bottom">
 
-  <p class="titulo">Dale play a nuestra canción</p>
+<p class="titulo">Dale play a nuestra canción</p>
 
-  <div style="margin:20px auto; max-width:320px;">
-    <iframe width="100%" height="180"
-      src=“https://youtu.be/px5QayCP064?si=8jiZ1O4AJPNxY5vF"
-      title="Nuestra canción"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
-  </div>
+<div style="margin:25px auto; max-width:320px;">
+  <iframe width="100%" height="180"
+    src="https://www.youtube.com/embed/-UHhptlguHU"
+    title="Nuestra canción"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+</div>
 
-  <h1 class="script">Adalberto Gómez</h1>
-  <h2>&</h2>
-  <h1 class="script">Araneth Ortiz</h1>
+<h1 class="script">Adalberto Gómez</h1>
+<h2>&</h2>
+<h1 class="script">Araneth Ortiz</h1>
 
-  <p class="fecha">08 · 03 · 2026</p>
+<p class="fecha">08 · 03 · 2026</p>
 
-  <p class="verso">
-    “Así que ya no son dos, sino una sola carne.  
-    Por lo tanto, lo que Dios ha unido, que no lo separe ningún hombre…”  
-    <br>Mateo 19:6
-  </p>
+<p class="verso">
+“Así que ya no son dos, sino una sola carne.  
+Por lo tanto, lo que Dios ha unido, que no lo separe ningún hombre…”  
+<br>Mateo 19:6
+</p>
 
-  <p class="iniciales">A | A</p>
-  <h3>¡Nos casamos!</h3>
+<p class="iniciales">A | A</p>
+<h3>¡Nos casamos!</h3>
 
-  <img src="foto-pareja.jpg" alt="Nuestra foto">
+<img src="foto-pareja.jpg" class="foto">
 
 </section>
 
 <!-- 🌿 INFORMACIÓN -->
-<section>
+<section class="fade">
 
-  <h2 class="titulo">Domingo</h2>
-  <h2>08 de Marzo de 2026</h2>
+<h2 class="titulo">Domingo</h2>
+<h2>08 de Marzo de 2026</h2>
 
-  <div id="contador"></div>
+<div id="contador"></div>
 
-  <h3 class="titulo">Ceremonia</h3>
-  <p>
-    Será un placer para nosotros que nos acompañe junto a su familia
-    a la pequeña ceremonia en donde se presentará un breve discurso
-    basado en la Biblia dirigido al nuevo matrimonio.
-  </p>
+<h3 class="titulo">Ceremonia</h3>
+<p>
+Será un placer para nosotros que nos acompañe junto a su familia
+a la pequeña ceremonia en donde se presentará un breve discurso
+basado en la Biblia dirigido al nuevo matrimonio.
+</p>
 
-  <p>14:00 hrs</p>
-  <p><strong>Salón de eventos ZOMAY</strong></p>
-  <p>Priv. de San Luis 005, La Magdalena Huizachitla,  
-  55715 San Francisco Coacalco, Méx.</p>
+<p>14:00 hrs</p>
+<p><strong>Salón de eventos ZOMAY</strong></p>
+<p>
+Priv. de San Luis 005, La Magdalena Huizachitla  
+<br>San Francisco Coacalco, Méx.
+</p>
 
-  <a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb" target="_blank">
-    Ver ubicación
-  </a>
+<a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb" target="_blank">
+Ver ubicación
+</a>
 
-  <h3 class="titulo">Recepción</h3>
-  <p>15:00 hrs</p>
-  <p><strong>Salón de eventos ZOMAY</strong></p>
+<h3 class="titulo">Recepción</h3>
+<p>15:00 hrs</p>
 
-  <a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb" target="_blank">
-    Ver ubicación
-  </a>
+<a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb" target="_blank">
+Ver ubicación
+</a>
 
-  <div class="itinerario">
-    <div>🍸 Recepción</div>
-    <div>💍 Ceremonia</div>
-    <div>🍽 Banquete</div>
-    <div>🥂 Brindis</div>
-    <div>🎉 Fiesta</div>
-    <div>🎊 Hora loca</div>
-    <div>🏁 Fin</div>
-  </div>
+<div class="itinerario">
+<div>Recepción</div>
+<div>Ceremonia</div>
+<div>Banquete</div>
+<div>Brindis</div>
+<div>Fiesta</div>
+<div>Hora loca</div>
+<div>Fin</div>
+</div>
 
-  <h3 class="titulo">Código de vestimenta</h3>
-  <p><strong>RIGUROSO FORMAL</strong></p>
-  <p>
-    Debido a que el traje del novio será azul rey y el vestido de la novia blanco,
-    solicitamos excluir dichos colores.
-    <br><br>
-    “Su vestimenta debe mostrar amor y respeto”  
-    <br>(1 Timoteo 2:9)
-  </p>
+<h3 class="titulo">Código de vestimenta</h3>
+<p><strong>RIGUROSO FORMAL</strong></p>
+<p>
+Debido a que el traje del novio será azul rey y el vestido de la novia blanco,
+solicitamos excluir dichos colores.
+<br><br>
+“Su vestimenta debe mostrar amor y respeto”  
+<br>(1 Timoteo 2:9)
+</p>
 
 </section>
 
 <!-- 💙 CONFIRMACIÓN -->
-<section class="confirmacion">
+<section class="confirmacion fade">
+<img src="https://i.imgur.com/6xKQq5F.png" class="flor-top">
 
-  <h2 class="titulo">Sugerencia de regalos</h2>
-  <p>
-    Tu presencia es el mejor regalo, pero si deseas tener un detalle con nosotros,
-    te dejamos la siguiente sugerencia.
-  </p>
+<h2 class="titulo">Sugerencia de regalos</h2>
+<p>
+Tu presencia es el mejor regalo, pero si deseas tener un detalle con nosotros,
+te dejamos la siguiente sugerencia.
+</p>
 
-  <a class="boton" href="https://www.amazon.com.mx/wedding/guest-view/3MBLMPJHP53YY" target="_blank">
-    Lluvia de regalos
-  </a>
+<a class="boton" href="https://www.amazon.com.mx/wedding/guest-view/3MBLMPJHP53YY" target="_blank">
+Lluvia de regalos
+</a>
 
-  <h2 class="titulo">Confirmar asistencia</h2>
-  <p>Confirmar antes del 15 de Febrero</p>
+<h2 class="titulo">Confirmar asistencia</h2>
+<p>Confirmar antes del 15 de Febrero</p>
 
-  <a class="boton" href="https://wa.me/525574036195” target="_blank">
-    Confirmar con Adalberto
-  </a>
+<a class="boton" href="https://wa.me/525574036195"_blank">
+Confirmar con Adalberto
+</a>
 
-  <br><br>
+<br><br>
 
-  <a class="boton" href="https://wa.me/qr/ZOWANJ7IMQJ7F1" target="_blank">
-    Confirmar con Araneth
-  </a>
+<a class="boton" href="https://wa.me/qr/ZOWANJ7IMQJ7F1" target="_blank">
+Confirmar con Araneth
+</a>
 
-  <p style="margin-top:30px;">
-    Esperamos contar con su presencia.  
-    <br>Muchas gracias.
-  </p>
+<p style="margin-top:35px;">
+Esperamos contar con su presencia.  
+<br>Muchas gracias.
+</p>
 
 </section>
 
@@ -236,17 +270,22 @@ h1,h2,h3{
 const evento = new Date("March 8, 2026 14:00:00").getTime();
 setInterval(()=>{
   const ahora = new Date().getTime();
-  const d = Math.floor((evento - ahora)/(1000*60*60*24));
-  const h = Math.floor((evento - ahora)%(1000*60*60*24)/(1000*60*60));
-  const m = Math.floor((evento - ahora)%(1000*60*60)/(1000*60));
-  const s = Math.floor((evento - ahora)%(1000*60)/1000);
-
+  const d = Math.floor((evento-ahora)/(1000*60*60*24));
+  const h = Math.floor((evento-ahora)%(1000*60*60*24)/(1000*60*60));
+  const m = Math.floor((evento-ahora)%(1000*60*60)/(1000*60));
+  const s = Math.floor((evento-ahora)%(1000*60)/1000);
   document.getElementById("contador").innerHTML =
-  `<span>${d} días</span>
-   <span>${h} hrs</span>
-   <span>${m} min</span>
-   <span>${s} seg</span>`;
+  `<span>${d} días</span><span>${h} hrs</span><span>${m} min</span><span>${s} seg</span>`;
 },1000);
+
+// FADE ON SCROLL
+const faders=document.querySelectorAll('.fade');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting)e.target.classList.add('visible');
+  });
+});
+faders.forEach(f=>obs.observe(f));
 </script>
 
 </body>
