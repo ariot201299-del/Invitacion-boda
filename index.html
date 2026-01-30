@@ -6,7 +6,7 @@
 <title>Adalberto & Araneth</title>
 
 <!-- FUENTES -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -23,16 +23,34 @@ body{
 }
 
 section{
-  padding:50px 20px;
+  padding:55px 20px;
   text-align:center;
 }
 
 h1,h2,h3{
-  margin:10px 0;
+  margin:12px 0;
 }
 
 .script{
   font-family:'Great Vibes', cursive;
+}
+
+.titulo{
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:14px;
+}
+
+/* BOTONES */
+.boton{
+  display:inline-block;
+  margin:12px auto;
+  padding:14px 26px;
+  background:var(--azul-rey);
+  color:white;
+  text-decoration:none;
+  border-radius:30px;
+  font-size:14px;
 }
 
 /* PORTADA */
@@ -43,10 +61,11 @@ h1,h2,h3{
 
 .portada img{
   width:80%;
-  max-width:300px;
-  border-radius:20px;
-  margin:20px auto;
+  max-width:320px;
+  border-radius:24px;
+  margin:25px auto;
   display:block;
+  filter:grayscale(100%) contrast(1.1);
 }
 
 .fecha{
@@ -57,32 +76,21 @@ h1,h2,h3{
 .verso{
   font-size:14px;
   opacity:.9;
-  margin:20px 0;
+  margin:25px 0;
 }
 
 .iniciales{
-  font-size:20px;
   letter-spacing:4px;
-  margin-top:10px;
+  margin-top:15px;
 }
 
 /* INFO */
-.boton{
-  display:inline-block;
-  margin:10px auto;
-  padding:12px 20px;
-  background:var(--azul-rey);
-  color:white;
-  text-decoration:none;
-  border-radius:25px;
-  font-size:14px;
-}
-
 .itinerario{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:10px;
-  margin-top:20px;
+  margin-top:25px;
+  font-size:14px;
 }
 
 /* CONFIRMACIÓN */
@@ -91,15 +99,10 @@ h1,h2,h3{
   color:white;
 }
 
-footer{
-  font-size:13px;
-  opacity:.8;
-}
-
 /* CONTADOR */
 #contador span{
   display:inline-block;
-  margin:5px;
+  margin:6px;
   font-size:18px;
 }
 </style>
@@ -107,14 +110,20 @@ footer{
 
 <body>
 
-<!-- 🎶 MÚSICA -->
-<audio id="musica" loop>
-  <source src="AQUI_TU_CANCION.mp3" type="audio/mpeg">
-</audio>
-
+<!-- 🌸 PORTADA -->
 <section class="portada">
-  <p>Dale play a nuestra canción 🎶</p>
-  <button class="boton" onclick="document.getElementById('musica').play()">▶ Play</button>
+
+  <p class="titulo">Dale play a nuestra canción</p>
+
+  <div style="margin:20px auto; max-width:320px;">
+    <iframe width="100%" height="180"
+      src=“https://youtu.be/px5QayCP064?si=8jiZ1O4AJPNxY5vF"
+      title="Nuestra canción"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
 
   <h1 class="script">Adalberto Gómez</h1>
   <h2>&</h2>
@@ -131,53 +140,68 @@ footer{
   <p class="iniciales">A | A</p>
   <h3>¡Nos casamos!</h3>
 
-  <!-- FOTO -->
-  <img src="FOTO_PAREJA.jpg" alt="Nuestra foto">
+  <img src="foto-pareja.jpg" alt="Nuestra foto">
+
 </section>
 
-<!-- INFORMACIÓN -->
+<!-- 🌿 INFORMACIÓN -->
 <section>
-  <h2>Domingo 08 de Marzo de 2026</h2>
+
+  <h2 class="titulo">Domingo</h2>
+  <h2>08 de Marzo de 2026</h2>
 
   <div id="contador"></div>
 
-  <h3>Ceremonia</h3>
+  <h3 class="titulo">Ceremonia</h3>
   <p>
-    Será un placer para nosotros que nos acompañe junto a su familia a la pequeña ceremonia
-    en donde se presentará un breve discurso basado en la Biblia dirigido al nuevo matrimonio.
+    Será un placer para nosotros que nos acompañe junto a su familia
+    a la pequeña ceremonia en donde se presentará un breve discurso
+    basado en la Biblia dirigido al nuevo matrimonio.
   </p>
-  <p>🕑 14:00 hrs</p>
-  <p>Salón de eventos ZOMAY</p>
-  <p>Priv. de San Luis 005, La Magdalena Huizachitla, Coacalco</p>
 
-  <a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb" target="_blank">Ver ubicación</a>
+  <p>14:00 hrs</p>
+  <p><strong>Salón de eventos ZOMAY</strong></p>
+  <p>Priv. de San Luis 005, La Magdalena Huizachitla,  
+  55715 San Francisco Coacalco, Méx.</p>
 
-  <h3>Recepción</h3>
-  <p>🕒 15:00 hrs</p>
+  <a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb" target="_blank">
+    Ver ubicación
+  </a>
+
+  <h3 class="titulo">Recepción</h3>
+  <p>15:00 hrs</p>
+  <p><strong>Salón de eventos ZOMAY</strong></p>
+
+  <a class="boton" href="https://maps.app.goo.gl/dX9aYgEfv4NjCTYz8?g_st=iwb" target="_blank">
+    Ver ubicación
+  </a>
 
   <div class="itinerario">
-    <div>Recepción</div>
-    <div>Ceremonia</div>
-    <div>Banquete</div>
-    <div>Brindis</div>
-    <div>Fiesta</div>
-    <div>Hora loca</div>
-    <div>Fin</div>
+    <div>🍸 Recepción</div>
+    <div>💍 Ceremonia</div>
+    <div>🍽 Banquete</div>
+    <div>🥂 Brindis</div>
+    <div>🎉 Fiesta</div>
+    <div>🎊 Hora loca</div>
+    <div>🏁 Fin</div>
   </div>
 
-  <h3>Código de vestimenta</h3>
+  <h3 class="titulo">Código de vestimenta</h3>
   <p><strong>RIGUROSO FORMAL</strong></p>
   <p>
     Debido a que el traje del novio será azul rey y el vestido de la novia blanco,
     solicitamos excluir dichos colores.
     <br><br>
-    “Su vestimenta debe mostrar amor y respeto” (1 Timoteo 2:9)
+    “Su vestimenta debe mostrar amor y respeto”  
+    <br>(1 Timoteo 2:9)
   </p>
+
 </section>
 
-<!-- CONFIRMACIÓN -->
+<!-- 💙 CONFIRMACIÓN -->
 <section class="confirmacion">
-  <h2>Sugerencia de regalos</h2>
+
+  <h2 class="titulo">Sugerencia de regalos</h2>
   <p>
     Tu presencia es el mejor regalo, pero si deseas tener un detalle con nosotros,
     te dejamos la siguiente sugerencia.
@@ -187,35 +211,41 @@ footer{
     Lluvia de regalos
   </a>
 
-  <h2>Confirmar asistencia</h2>
+  <h2 class="titulo">Confirmar asistencia</h2>
   <p>Confirmar antes del 15 de Febrero</p>
 
-  <a class="boton" href="https://wa.me/525574036195" target="_blank">Confirmar con Adalberto</a>
-  <br><br>
-  <a class="boton" href="https://wa.me/qr/ZOWANJ7IMQJ7F1" target="_blank">Confirmar con Araneth</a>
+  <a class="boton" href="https://wa.me/525574036195” target="_blank">
+    Confirmar con Adalberto
+  </a>
 
-  <footer>
-    <p>Esperamos contar con su presencia. Muchas gracias.</p>
-  </footer>
+  <br><br>
+
+  <a class="boton" href="https://wa.me/qr/ZOWANJ7IMQJ7F1" target="_blank">
+    Confirmar con Araneth
+  </a>
+
+  <p style="margin-top:30px;">
+    Esperamos contar con su presencia.  
+    <br>Muchas gracias.
+  </p>
+
 </section>
 
-<!-- CONTADOR SCRIPT -->
+<!-- ⏳ CONTADOR -->
 <script>
 const evento = new Date("March 8, 2026 14:00:00").getTime();
 setInterval(()=>{
   const ahora = new Date().getTime();
-  const distancia = evento - ahora;
-
-  const d = Math.floor(distancia / (1000*60*60*24));
-  const h = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
-  const m = Math.floor((distancia%(1000*60*60))/(1000*60));
-  const s = Math.floor((distancia%(1000*60))/1000);
+  const d = Math.floor((evento - ahora)/(1000*60*60*24));
+  const h = Math.floor((evento - ahora)%(1000*60*60*24)/(1000*60*60));
+  const m = Math.floor((evento - ahora)%(1000*60*60)/(1000*60));
+  const s = Math.floor((evento - ahora)%(1000*60)/1000);
 
   document.getElementById("contador").innerHTML =
-    `<span>${d} días</span>
-     <span>${h} hrs</span>
-     <span>${m} min</span>
-     <span>${s} seg</span>`;
+  `<span>${d} días</span>
+   <span>${h} hrs</span>
+   <span>${m} min</span>
+   <span>${s} seg</span>`;
 },1000);
 </script>
 
